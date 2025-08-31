@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Detection App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .method {
+            background: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .url {
+            font-family: 'Courier New', monospace;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #495057;
+        }
+        .description {
+            margin-top: 10px;
+            color: #6c757d;
+        }
+        .example {
+            background: #f1f3f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .note h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather Detection App</h1>
+        
+        <div class="status">
+            ✅ Application is running successfully!
+        </div>
+
+        <h2>📡 Available API Endpoints</h2>
+
+        <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/api/weather/health</span>
+            <div class="description">Check the health status of the application</div>
+            <div class="example">Response: {"status": "UP", "service": "Weather Detection API"}</div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/api/weather/city/{cityName}</span>
+            <div class="description">Get weather information for a specific city</div>
+            <div class="example">Example: /api/weather/city/London</div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/api/weather/search?city={cityName}</span>
+            <div class="description">Search for weather information using query parameter</div>
+            <div class="example">Example: /api/weather/search?city=New York</div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/api/weather/statistics</span>
+            <div class="description">Get weather search statistics and analytics</div>
+        </div>
+
+        <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/h2-console</span>
+            <div class="description">H2 Database Console (for development)</div>
+            <div class="example">JDBC URL: jdbc:h2:mem:weather_db</div>
+        </div>
+
+        <div class="note">
+            <h3>⚠️ Important Notes:</h3>
+            <ul>
+                <li><strong>API Key Required:</strong> You need to get a free API key from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></li>
+                <li><strong>Update Configuration:</strong> Replace <code>your_openweathermap_api_key_here</code> in <code>application.properties</code> with your actual API key</li>
+                <li><strong>Database:</strong> Currently using H2 in-memory database for development</li>
+                <li><strong>Caching:</strong> Weather data is cached for 30 minutes to improve performance</li>
+            </ul>
+        </div>
+
+        <h2>🚀 Quick Start</h2>
+        <ol>
+            <li>Get your API key from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></li>
+            <li>Update the API key in <code>src/main/resources/application.properties</code></li>
+            <li>Test the API: <code>GET http://localhost:8080/api/weather/city/London</code></li>
+        </ol>
+
+        <h2>📚 Features</h2>
+        <ul>
+            <li>✅ RESTful API with Spring Boot</li>
+            <li>✅ Database integration with JPA/Hibernate</li>
+            <li>✅ Caching for improved performance</li>
+            <li>✅ Search history tracking</li>
+            <li>✅ Error handling and validation</li>
+            <li>✅ Comprehensive logging</li>
+            <li>✅ Cross-origin support</li>
+        </ul>
+    </div>
+</body>
+</html>
