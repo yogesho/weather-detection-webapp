@@ -1,0 +1,12 @@
+target/
+.git/
+.gitignore
+README.md
+Procfile
+system.properties
+.render-buildpacks
+render.yaml
+PROJECT_DOCUMENTATION.md
+test_output.html
+.vscode/
+*.md
