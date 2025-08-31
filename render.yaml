@@ -2,12 +2,15 @@ services:
   - type: web
     name: weather-detection-webapp
     env: java
-    buildCommand: mvn clean install
+    plan: free
+    buildCommand: mvn clean install -DskipTests
     startCommand: java -jar target/weather-detection-webapp-1.0.0.jar
     envVars:
       - key: WEATHER_API_KEY
         value: 3efe876f7ceb14a7be4f3125452a4381
       - key: JAVA_OPTS
         value: -Xmx512m -Xms256m
+      - key: PORT
+        value: 8080
     healthCheckPath: /health
     autoDeploy: true
