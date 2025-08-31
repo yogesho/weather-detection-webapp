@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ��️ Weather Detection WebApp
 
 A complete, production-ready Weather Detection Web Application built with **Spring Boot + JSP + CSS + JavaScript**. This application provides real-time weather information, forecasts, and air quality data for any city worldwide.
@@ -324,3 +325,6 @@ For support and questions:
 **Built with ❤️ using Spring Boot + JSP + Bootstrap**
 
 *Last updated: August 2025*
+=======
+# weather-detection-webapp
+>>>>>>> 76654338f0a4f3e9fbc71731e819c798b88e105f
